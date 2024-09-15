@@ -3,7 +3,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start"
+    "start": "next build && next start",
+    "export": "OUTPUT=export next build && serve out/",
+    "clean": "rm -rf .next out"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
