@@ -1,10 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "start": "next build && next start",
-    "export": "OUTPUT=export next build && serve out/",
+    "build": "npm run clean && next build",
+    "dev": "npm run clean && next dev --turbo",
+    "start": "npm run build && next start",
+    "lint": "next lint",
+    "export": "OUTPUT=export npm run build && serve out/",
     "clean": "rm -rf .next out"
   },
   "dependencies": {
