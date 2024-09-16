@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     unoptimized: process.env.OUTPUT === 'export',
   },
+  experimental: {
+    ppr: (process.env.OUTPUT !== 'export') && 'incremental',
+  },
 };
 
 export default nextConfig;
