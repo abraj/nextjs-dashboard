@@ -1,5 +1,10 @@
 import { Revenue } from './definitions';
 
+export const delay = (msec: number, msg?: string) => {
+  if (msg) console.log(msg);
+  return new Promise((resolve) => setTimeout(resolve, msec));
+};
+
 export const formatCurrency = (amount: number) => {
   return (amount / 100).toLocaleString('en-US', {
     style: 'currency',

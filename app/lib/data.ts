@@ -7,15 +7,14 @@ import {
   LatestInvoiceRaw,
   Revenue,
 } from './definitions';
-import { formatCurrency } from './utils';
+import { delay, formatCurrency } from './utils';
 
 export async function fetchRevenue() {
   try {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
 
-    console.log('Fetching revenue data...');
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await delay(3000, 'Fetching revenue data...');
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
@@ -29,7 +28,7 @@ export async function fetchRevenue() {
 }
 
 export async function fetchLatestInvoices() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await delay(2000);
 
   try {
     const data = await sql<LatestInvoiceRaw>`
@@ -51,7 +50,7 @@ export async function fetchLatestInvoices() {
 }
 
 export async function fetchCardData() {
-  // await new Promise((resolve) => setTimeout(resolve, 4000));
+  // await delay(4000);
 
   try {
     // You can probably combine these into a single SQL query
