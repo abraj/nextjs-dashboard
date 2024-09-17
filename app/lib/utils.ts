@@ -2,7 +2,8 @@ import { Revenue } from './definitions';
 
 export const delay = (msec: number, msg?: string) => {
   if (msg) console.log(msg);
-  return new Promise((resolve) => setTimeout(resolve, msec));
+  // return new Promise((resolve) => setTimeout(resolve, msec));
+  return Promise.resolve();
 };
 
 export const formatCurrency = (amount: number) => {
